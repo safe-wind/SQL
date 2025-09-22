@@ -1,12 +1,10 @@
-
-
 create table categoria (
 	nome stringa primary key,
 	super stringa,
 	check (nome <> super)
 );
 
-alter table add foreign key (super)
+alter table categoria add foreign key (super)
 		references categoria(nome);
 
 -- WITH RECURSIVE
@@ -134,7 +132,7 @@ create table bid (
 	codice unique, 
 	privato stringa not null,
 
-	unique (asta, istante)
+	unique (asta, istante),
 
 	foreign key (asta) references asta(integer),
 	foreign key privato references privato(nome)

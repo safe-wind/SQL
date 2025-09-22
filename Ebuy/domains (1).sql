@@ -1,4 +1,4 @@
-create domain Stringa as varchar;
+create domain stringa as varchar;
 
 create domain Voto as integer
 	check (value BETWEEN 0 and 5);
